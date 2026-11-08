@@ -2,9 +2,33 @@ import {useEffect, useState } from "react";
 
 function useFetch (api) {
 
-  const [product, setProduct] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [item, setItem] = useState({
+    product: null,
+    error: null,
+    loading: true,
+  });
+
+  const setLoading = (value) => {
+    setItem((prev) => ({
+      ...prev,
+      loading: value 
+    }));
+  }
+
+  const setError = (value) => {
+    setItem((prev) => ({
+      ...prev,
+      error: value
+    }))
+  }
+
+  const setProduct = (value) => {
+    setItem((prev) => ({
+      ...prev,
+      product: value
+    }))
+  }
+
 
   useEffect(() => {
     async function fetchData () {
@@ -26,7 +50,7 @@ function useFetch (api) {
     fetchData();
   },[api]);
   
-  return {product, error, loading};
+  return item;
  
 }
 
