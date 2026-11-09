@@ -3,7 +3,7 @@ import {useEffect, useState } from "react";
 function useFetch (api) {
 
   const [item, setItem] = useState({
-    product: null,
+    products: null,
     error: null,
     loading: true,
   });
@@ -25,7 +25,7 @@ function useFetch (api) {
   const setProduct = (value) => {
     setItem((prev) => ({
       ...prev,
-      product: value
+      products: value
     }))
   }
 

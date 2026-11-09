@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./items.css";
 
-function Item ({data}) {
-  const {product, error, loading} = data;
+function Item ({product}) {
+
   const [itemCount, setItemCount] = useState(0);
 
   function increaseCount () {
@@ -18,36 +18,27 @@ function Item ({data}) {
     });
   } 
 
-
-    if (loading) {
-      return (
-        <div className="item">
-          <p>Loading...</p>
-        </div>
-      );
-    }
-    if (product) {
-    return (
-      <div className="itemContainer">
-        <img src={product.image} />
-        <div className="itemTitle">
-          {product.title}
-        </div>
-        <div className="itemPrice">
-          {product.price}
-        </div>
-        <div className="itemControls">
-          <button onClick={increaseCount} >+</button>
-          <div className="itemCount">
-            {itemCount} 
-          </div>
-          <button onClick={decreaseCount}>-</button>
-          <button>cart</button>
-        </div>
+  return (
+    <div className="itemContainer">
+      <img src={product.image} />
+      <div className="itemTitle">
+        {product.title}
       </div>
-    );
-    }  
-}
+      <div className="itemPrice">
+        ${product.price}
+      </div>
+      <div className="itemControls">
+        <button onClick={increaseCount} >+</button>
+        <div className="itemCount">
+          {itemCount} 
+        </div>
+        <button onClick={decreaseCount}>-</button>
+        <button>cart</button>
+      </div>
+    </div>
+  );
+}  
+
  
 
 export default Item;
