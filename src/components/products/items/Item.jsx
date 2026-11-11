@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./items.css";
+import { useOutletContext } from "react-router";
 
-function Item ({product}) {
+function Item ({product }) {
 
   const [itemCount, setItemCount] = useState(0);
+  const {addToCart} = useOutletContext();
 
   function increaseCount () {
     setItemCount((prev) => prev + 1);
@@ -33,7 +35,7 @@ function Item ({product}) {
           {itemCount} 
         </div>
         <button onClick={decreaseCount}>-</button>
-        <button>cart</button>
+        <button onClick={() => addToCart({product, itemCount})}>cart</button>
       </div>
     </div>
   );

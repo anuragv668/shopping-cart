@@ -1,6 +1,14 @@
+import { useState } from "react";
 import { Link, Outlet } from "react-router"
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  function addToCart(item) {
+    setCart(prev => [...prev, item] );
+  }
+  console.log(cart);
+
   return (
     <>
       <p>This is the main Page</p>
@@ -15,7 +23,7 @@ function App() {
           <Link to="/products">Products</Link>
         </li>
       </ul>
-      <Outlet /> 
+      <Outlet context={{cart, addToCart}}/>
     </>
   )
 }

@@ -1,11 +1,10 @@
 .itemContainer {
-  height: 300px;
-  width: 300px;
   border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  padding: 10px;
 }
 
 img {

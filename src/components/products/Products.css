@@ -1,0 +1,12 @@
+.itemContainer {
+  height: 300px;
+  width: 300px;
+}
+
+.itemGrid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
