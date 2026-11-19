@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router"
+import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -11,18 +12,16 @@ function App() {
 
   return (
     <>
-      <p>This is the main Page</p>
-      <ul>
-        <li>
-          <Link to="/">Homepage</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-        <li>
-          <Link to="/products">Products</Link>
-        </li>
-      </ul>
+      <div className="logo">
+        <Link className="nav-link" to="/">
+        The Shoppers Hub
+        </Link>
+      </div> 
+      <nav>
+          <Link className="nav-link" to="/">Homepage</Link>
+          <Link className="nav-link" to="/products">Products</Link>
+          <Link className="nav-link" to="/cart">Cart</Link>
+      </nav>
       <Outlet context={{cart, addToCart}}/>
     </>
   )

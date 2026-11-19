@@ -7,12 +7,6 @@ function Products () {
   const item = useFetch('https://fakestoreapi.com/products');
   const {products, error, loading} = item;
  
-  const cart = [];
-  function addToCart(item) {
-    cart.push(item);
-    console.log(cart)
-  }
-  console.log(cart);
   return <>
     <p>This is the Products Page.</p>
     <Link to="/">Click to go back</Link>
@@ -22,7 +16,7 @@ function Products () {
           <div className="itemGrid">
           {
             products.map((item) => {
-            return <Item key={item.id} product={item} action={addToCart} />
+            return <Item key={item.id} product={item}  />
             })
           }
           </div>

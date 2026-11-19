@@ -4,7 +4,7 @@ import { useOutletContext } from "react-router";
 
 function Item ({product }) {
 
-  const [itemCount, setItemCount] = useState(0);
+  const [itemCount, setItemCount] = useState(1);
   const {addToCart} = useOutletContext();
 
   function increaseCount () {
@@ -35,7 +35,11 @@ function Item ({product }) {
           {itemCount} 
         </div>
         <button onClick={decreaseCount}>-</button>
-        <button onClick={() => addToCart({product, itemCount})}>cart</button>
+        <button onClick={() => {
+          if (itemCount == 0) return
+          addToCart({product, itemCount})
+          }
+        }>cart</button>
       </div>
     </div>
   );
