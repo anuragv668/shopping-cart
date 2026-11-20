@@ -1,0 +1,31 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 10px;
+  margin-top: 40px;
+  height: 70vh;
+  background-image: url("./images/Grayscale Everyday Essentials Flat Lay.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.linktag{
+  all: unset;
+  text-decoration: none;
+}
+
+.homepage-text {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.homepage-text:hover {
+  font-size: 3.2rem;
+  padding: 5px;
+}

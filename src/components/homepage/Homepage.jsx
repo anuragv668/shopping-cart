@@ -1,10 +1,14 @@
 import { Link } from "react-router";
+import "./Homepage.css";
+
 
 function Homepage () {
   return(
-    <>
-      <p>This is the Homepage of this shopping cart</p>
-    </>
+    <div className="homepage">
+      <Link className="linktag" to="/products">
+        <p className="homepage-text">Let's Go Shop </p>
+      </Link>
+    </div>
   );
 }
 
